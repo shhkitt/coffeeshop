@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>item</title>
+    <link rel="stylesheet" href="../../static/css/clear.css" th:href="@{/css/clear.css}">
+    <link rel="stylesheet" href="../../static/css/menu.css" th:href="@{/css/item.css}">
+    <link rel="stylesheet" href="../../static/css/header.css" th:href="@{/css/header.css}">
+</head>
+<body>
+<header class="my-header">
+    <a class="header-item h-i" th:href="@{#}">COFFEE AND CHILL</a>
+    <a class="header-item" th:href="@{/menu}">menu</a>
+    <a class="header-item" th:href="@{/cart}">cart</a>
+    <a class="header-item" th:href="@{/profile}">profile</a>
+</header>
+<div class="after-header"></div>
+<div class="item-card">
+    <div class="item-card-img">
+        <img th:src="@{/img/{id}.jpg(id=${Item.getId()})}"/>
+    </div>
+    <div class="item-card-descr">
+        <p class="i-name" th:text="${Item.getName()}"></p>
+        <div class="i-type-price">
+            <p class="i-type" th:text="${Item.getType()}"></p>
+            <p class="i-price" th:text="${Item.getStringPrice()}"></p>
+        </div>
+        <div class="i-descr">
+            <p th:text="${Item.getDescription()}"></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

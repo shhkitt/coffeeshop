@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cart</title>
+    <link rel="stylesheet" href="../../static/css/clear.css" th:href="@{/css/clear.css}">
+    <link rel="stylesheet" href="../../static/css/menu.css" th:href="@{/css/menu.css}">
+    <link rel="stylesheet" href="../../static/css/header.css" th:href="@{/css/header.css}">
+    <link rel="stylesheet" href="../../static/css/cart.css" th:href="@{/css/cart.css}">
+</head>
+<body>
+<header class="my-header">
+    <a class="header-item h-i" th:href="@{#}">COFFEE AND CHILL</a>
+    <a class="header-item" th:href="@{/menu}">menu</a>
+    <a class="header-item" th:href="@{/cart}">cart</a>
+    <a class="header-item" th:href="@{/profile}">profile</a>
+</header>
+<div class="cart-card">
+    <div class="cart-item"></div>
+    <div class="cart-item" th:each="item : ${cart.getCartItems()}">
+        <div class="c-i-item" th:text="${item.getItem().getName()}"></div>
+        <div class="c-i-item"><span th:text="${item.getQuantity()}"></span>
+            <span> x </span>
+        <span th:text="${item.getItem().getPrice()}"></span>
+        </div>
+        <div class="c-i-item"th:text="${item.getQuantity()} * ${item.getItem().getPrice()}"></div>
+        <div class="c-i-f c-i-item">
+        <div class="card-add">
+            <form th:method="POST" th:action="@{/cart/remove/{id}(id=${item.getId()})}">
+                <input class="card-add" type="submit" value="-"/>
+            </form>
+        </div>
+        <div class="card-add">
+            <form th:method="POST" th:action="@{/cart/add/{id}(id=${item.getItem().getId()})}">
+                <input class="card-add" type="submit" value="+"/>
+            </form>
+        </div>
+        </div>
+    </div>
+    <form class="s" th:method="POST"  th:action="@{/order/add/{id}(id=${cart.getId()})}">
+        <input class="cart-submit" type="submit" value="make an order">
+    </form>
+</div>
+</body>
+</html>

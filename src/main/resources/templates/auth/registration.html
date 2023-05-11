@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>registration</title>
+    <link rel="stylesheet" href="../../static/css/clear.css" th:href="@{/css/clear.css}">
+    <link rel="stylesheet" href="../../static/css/menu.css" th:href="@{/css/log.css}">
+    <link rel="stylesheet" href="../../static/css/header.css" th:href="@{/css/header.css}">
+</head>
+<body>
+<header class="my-header">
+    <a class="header-item h-i" th:href="@{#}">COFFEE AND CHILL</a>
+    <a class="header-item" th:href="@{/menu}">menu</a>
+    <a class="header-item" th:href="@{/cart}">cart</a>
+    <a class="header-item" th:href="@{/profile}">profile</a>
+</header>
+<div class="login-card">
+    <div class="f">
+        <div class="f-name">
+            <h2>LET'S CHILL TOGETHER</h2>
+        </div>
+<form th:method="POST" th:action="@{/auth/registration}" th:object="${person}">
+  <label for="username">username: </label>
+    <br>
+  <input type="text" th:field="*{username}" id="username"/>
+  <div style="color: red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username error</div>
+    <br/>
+    <label for="email">email: </label>
+    <br>
+    <input type="email" th:field="*{email}" id="email"/>
+    <br/>
+  <label for="password">password: </label>
+    <br>
+  <input type="password" th:field="*{password}" id="password"/>
+  <br/>
+  <input class="btn" type="submit" value="SIGN UP"/>
+    <br>
+    <div style="text-align: center">have an account? <a href="/auth/login">log in</a></div>
+</form>
+    </div>
+</div>
+</body>
+</html>
