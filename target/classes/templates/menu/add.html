@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../static/css/clear.css" th:href="@{/css/clear.css}">
+    <link rel="stylesheet" href="../../static/css/menu.css" th:href="@{/css/menu.css}">
+    <link rel="stylesheet" href="../../static/css/header.css" th:href="@{/css/header.css}">
+</head>
+<body>
+<header class="my-header">
+    <a class="header-item h-i" th:href="@{#}">COFFEE AND CHILL</a>
+    <a class="header-item" th:href="@{/menu}">menu</a>
+    <a class="header-item" th:href="@{/cart}">cart</a>
+    <a class="header-item" th:href="@{/profile}">profile</a>
+</header>
+
+<form name="i" method="post" action="">
+<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+<label for="type">type: </label>
+<input type="text" name="type" id="type"/>
+<br>
+<label for="name">name: </label>
+<input type="text" name="name" id="name"/>
+<br>
+<label for="description">description: </label>
+<input type="text" name="description" id="description"/>
+<br>
+<label for="price">price: </label>
+<input type="number" name="price" id="price"/>
+    <br>
+    <input class="btn" type="submit" value="add item"/>
+</form>
+</body>
+</html>

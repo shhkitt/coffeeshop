@@ -1,0 +1,50 @@
+.login-card{
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.f {
+    height: auto;
+    width: fit-content;
+    border: solid 1px #1E1E1E;
+    background-color: #D9D9D9;
+}
+
+.f-name{
+    width: 100%;
+    text-align: center;
+    padding: 40px;
+    border-bottom: solid 1px #1E1E1E;
+}
+
+form{
+    padding: 40px 60px;
+}
+
+.f input{
+    width: 400px;
+    height: 40px;
+    background-color: #D9D9D9;
+}
+
+input, input:active, input:focus{
+    border: none;
+    outline: solid 1px #1E1E1E;
+}
+
+.f .btn{
+    background-color: #90C89B;
+    font-family: m-m, sans-serif;
+}
+
+.f a{
+    color: #1E1E1E;
+    transition: 0.3s;
+}
+
+.f a:hover{
+    color: #90C89B;
+}

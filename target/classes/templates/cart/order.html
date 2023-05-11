@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>order</title>
+    <link rel="stylesheet" href="../../static/css/clear.css" th:href="@{/css/clear.css}">
+    <link rel="stylesheet" href="../../static/css/menu.css" th:href="@{/css/menu.css}">
+    <link rel="stylesheet" href="../../static/css/header.css" th:href="@{/css/header.css}">
+</head>
+<body>
+<header class="my-header">
+    <a class="header-item h-i" th:href="@{#}">COFFEE AND CHILL</a>
+    <a class="header-item" th:href="@{/menu}">menu</a>
+    <a class="header-item" th:href="@{/cart}">cart</a>
+    <a class="header-item" th:href="@{/profile}">profile</a>
+</header>
+<div class="order-card">
+    <h1>your order n.<span th:text="${order.getId()}"></span> is chilling on our spot</h1>
+    <h1>come n get it</h1>
+    <br>
+    <a th:href="@{/menu}">want more coffee?</a>
+</div>
+</body>
+</html>
